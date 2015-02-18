@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class checkPoint210 {
+    public static void main(String[] args) {
+        
+        double byte_small = Math.pow(-2, 7);
+        double byte_large = Math.pow(2, 7);
+        double short_small = Math.pow(-2, 15);
+        double short_big = Math.pow(2, 15);
+        
+        System.out.println("The smallest byte is " + byte_small + 
+            ", the largest byte is " + byte_large);
+            
+        
+            
+        System.out.println(56 % 6);
+        System.out.println(78 % -4);
+        System.out.println(-34 % 4);
+        
+        int m;
+        int r;
+        
+        input = new Scanner(System.in);
+        System.out.println("Enter
+    }
+}
