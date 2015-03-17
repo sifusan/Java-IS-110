@@ -1,16 +1,16 @@
 import java.util.Scanner;
 
-public class CheckSudokuSolutions {
+public class CheckSudokuSolution {
     public static void main(String[] args) {
         
-        int[] grid = readASolution();
+        int[][] grid = readASolution();
         
         System.out.println(isValid(grid) ? "Valid solution" :
-            "Invalid solution";
+            "Invalid solution");
             
         }
         
-        public static int[][] readASolution)( {
+        public static int[][] readASolution() {
             
             Scanner input = new Scanner(System.in);
             
@@ -41,4 +41,11 @@ public class CheckSudokuSolutions {
                 if (row != i && grid[row][j] == grid[i][j])
                     return false;
             
-            for (int row = (
+            for (int row = (i / 3) * 3; row < (i / 3) * 3 + 3; row++)
+                for (int col = (j / 3) * 3; col < (j / 3) * 3 + 3; col++)
+                    if (row != i && col != j && grid[row][col] == grid[i][j])
+                        return false;
+            
+            return true;
+    }
+}

@@ -1,0 +1,33 @@
+import java.util.Random;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class CardGame {
+    
+    public static void main(String[] args) {
+    
+    Deck deck = new Deck();
+    
+    }
+}
+
+
+class Deck {
+    
+    private static final String[] suits = {"Spades", "Hearts", "Diamonds", "Clubs"};
+    private static final String[] ranks = 
+        {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+     
+    public Deck() {            
+        
+    }
+    
+    
+}
+    
+class Player {
+    
+    public Player() {
+    
+    }
+}    
