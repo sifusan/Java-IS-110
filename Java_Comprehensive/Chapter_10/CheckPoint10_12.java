@@ -1,0 +1,14 @@
+public class CheckPoint10_12 {
+    public static void main(String[] args) {
+        
+        Integer x = 3 + new Integer(5);
+        System.out.println(x);
+        
+        Integer y = 3;
+        
+        //Double z = 3;
+        
+        int z = new Integer(3) + new Integer(5);
+        System.out.println(z);
+    }
+}
