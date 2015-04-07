@@ -18,7 +18,7 @@ public class Game {
     
     while(!finished) {
         while (!playerTurn) {
-            System.out.println("Player 1 turn, turn no " + numberOfTurns);
+            System.out.println("Player 1 turn, turn number " + numberOfTurns);
             System.out.println("Select which column and row you want to check");
             int setX = input.nextInt();
             int setY = input.nextInt();
@@ -29,13 +29,13 @@ public class Game {
             
             }
         while (playerTurn) {
-            System.out.println("Player 2 turn, turn no " + numberOfTurns);
+            System.out.println("Player 2 turn, turn number " + numberOfTurns);
             System.out.println("Select which column and row you want to check");
             int setX = input.nextInt();
             int setY = input.nextInt();
             board.setPlayer2Check(setX, setY);
             numberOfTurns++;
-            if (numberOfTurns == 9) {
+            if (numberOfTurns > 9) {
                 finished = true;
                 }
             playerTurn = false;

@@ -40,4 +40,9 @@ public class CircleFromSimpleGeometricObject
         System.out.println("The circle is created " + getDateCreated() +
             " and the radius is " + radius);
     }
+    
+    @Override
+    public String toString() {
+        return super.toString() + "\nradius " + radius;
+    }
 }        

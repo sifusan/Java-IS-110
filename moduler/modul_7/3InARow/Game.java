@@ -35,7 +35,7 @@ public class Game {
             int setY = input.nextInt();
             board.setPlayer2Check(setX, setY);
             numberOfTurns++;
-            if (numberOfTurns == 9) {
+            if (numberOfTurns > 9) {
                 finished = true;
                 }
             playerTurn = false;
