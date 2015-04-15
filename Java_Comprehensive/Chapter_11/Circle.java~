@@ -22,7 +22,7 @@ class B extends Circle {
         length = length;
     }
     
-    public static double getArea() {
-        return super.getArea() * length;
+    public double getArea() {
+        return getArea() * length;
     }
 }
