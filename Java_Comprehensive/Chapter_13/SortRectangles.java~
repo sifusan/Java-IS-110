@@ -1,0 +1,14 @@
+public class SortRectangles {
+    public static void main(String[] args) {
+        ComparableRectangle[] rectangles = {
+            new ComparableRectangle(3.3, 5.4),
+            new ComparableRectangle(13.24, 55.4),
+            new ComparableRectangle(7.4, 25.4),
+            new ComparableRectangle(1.4, 25.4)};
+        java.util.Arrays.sort(rectangles);
+        for (Rectangle rectangle: rectangles) {
+            System.out.print(rectangle.getHeight() + " ");
+            System.out.println();
+        }
+    }
+}

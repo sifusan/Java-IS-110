@@ -1,0 +1,20 @@
+import java.math.*;
+
+public class SortComparableObjects {
+    public static void main(String[] args) {
+        String[] cities = {"Savannah", "Boston", "Atlanta", "Tampa"};
+        java.util.Arrays.sort(cities);
+        for (String city: cities) {
+            System.out.println(city + " ");
+        }
+        System.out.println();
+        
+        BigInteger[] hugeNumbers = {new BigInteger("2323234342342342"),
+                new BigInteger("4354224554211334"),
+                new BigInteger("232422423112441")};
+        java.util.Arrays.sort(hugeNumbers);
+        for(BigInteger number: hugeNumbers) {
+            System.out.print(number + " ");
+        }
+    }
+}

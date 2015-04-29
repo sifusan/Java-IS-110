@@ -52,7 +52,7 @@ class Game {
 
 class Hero {
     private Map currentLocation;
-    private int health;
+    private Integer health;
     
     public Hero() {
     }
@@ -125,7 +125,7 @@ class Map {
         setExplored(explored);
         setVisibility(visibility);
     }
-    
+    @Override
     public String toString() {
         return "This is the " + getName() + "\n" + isSafe() + "\n" + 
             isOutside() + "\n" + isExplored() + "\n" + checkVisibility();
