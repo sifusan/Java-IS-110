@@ -1,0 +1,6 @@
+1.
+Title: "Brick", "Buildy"
+Type: Game
+Breif: A platforming game that requires the player to build his or her way through the stage (limited resources?)
+How to complete: Build a sample level with unlimited resources.
+Tools: JavaFX, Swing(?) (others?) NOTE! Check out the LWGJL library and Slick and other APIs

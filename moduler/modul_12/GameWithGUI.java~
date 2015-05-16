@@ -19,7 +19,7 @@ public class GameWithGUI {
         Person person = new Person(10, areas.get(0));
         
         GameWindow gameWindow = new GameWindow();
-        gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gameWindow.setSize(300, 250);
         gameWindow.setVisible(true);
         
@@ -30,8 +30,8 @@ public class GameWithGUI {
     }
      
      public static void fillAreas(ArrayList<Area> areas) {
-        areas.add(new Room1("Room1", true));
-        areas.add(new Room2("Gayroom", false));
+        areas.add(new Room1("Room 1", true));
+        areas.add(new Room2("Room 2", false));
      }
 }
 
