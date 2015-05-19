@@ -17,7 +17,7 @@ public class ShowHBoxVBox extends Application {
         BorderPane pane = new BorderPane();
         pane.setTop(getHBox());
         pane.setLeft(getVBox());
-        Scene scene = new Scene(pane);
+        Scene scene = new Scene(pane);	
         primaryStage.setTitle("ShowHBoxVBox");
         primaryStage.setScene(scene);
         primaryStage.show();

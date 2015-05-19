@@ -21,14 +21,30 @@ public class ControlCircleWithMouseAndKey extends Application {
         hBox.getChildren().add(btEnlarge);
         hBox.getChildren().add(btShrink);
         
-        btEnlarge.setOnAction(e -> circlePane.enlarge());
-        btShrink.setOnAction(e -> circlePane.shrink());
+        btEnlarge.setOnAction(e -> {
+            circlePane.enlarge();
+            circlePane.requestFocus();
+        });
+        
+        btShrink.setOnAction(e -> {
+            circlePane.shrink();
+            circlePane.requestFocus();
+        });
         
         circlePane.setOnMouseClicked(e -> {
             if (e.getButton() == MouseButton.PRIMARY) {
                 circlePane.enlarge();
             }
             else if (e.getButton() == MouseButton.SECONDARY) {
+                circlePane.shrink();
+            }
+        });
+        
+        circlePane.setOnKeyPressed (e -> {
+            if (e.getCode() == KeyCode.U) {
+                circlePane.enlarge();
+            }
+            else if (e.getCode() == KeyCode.D) {
                 circlePane.shrink();
             }
         });

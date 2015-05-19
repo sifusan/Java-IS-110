@@ -17,7 +17,7 @@ public class ShowHBoxVBox extends Application {
         BorderPane pane = new BorderPane();
         pane.setTop(getHBox());
         pane.setLeft(getVBox());
-        Scene scene = new Scene(pane);
+        Scene scene = new Scene(pane);	
         primaryStage.setTitle("ShowHBoxVBox");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -36,7 +36,7 @@ public class ShowHBoxVBox extends Application {
     }
     
     private VBox getVBox() {
-        VBox vbox = new VBox(15);
+        VBox vBox = new VBox(15);
         vBox.setPadding(new Insets(15, 5, 5, 5));
         vBox.getChildren().add(new Label("Courses"));
         
