@@ -24,7 +24,7 @@ public class FirstLevel extends Level {
         obstacle.setY(line.getEndY() - obstacle.getHeight());
         pane.getChildren().add(obstacle);
         
-        //pane.getChildren().add(character.getRectangle());
+        pane.getChildren().add(character.getRectangle());
     }
 }   
     

@@ -11,7 +11,7 @@ public class FirstLevel extends Level {
     private Rectangle obstacle;
     
     public FirstLevel() {
-        super("Level 1", new Pane(), new Line(), new Character());
+        super("Level 1", new Pane(), new Line(), new Character();
         obstacle = new Rectangle(100, 100);
         line.setStartX(0);
         line.setStartY(getHeight() / 2 + 60);

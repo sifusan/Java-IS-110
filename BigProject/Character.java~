@@ -5,13 +5,15 @@ public class Character {
     private Rectangle rect;
     private final double FALL_SPEED = 9.81;
     
-    //public Character(Rectangle rect) {
-      //  this.rect = rect;
-        //System.out.println("test");
-    //}
+    public Character(Rectangle rect) {
+        this.rect = rect;
+        System.out.println("test");
+    }
     
     public Character() {
-        //rect.setFill(Color.RED);
+        this(new Rectangle(10, 10));
+        System.out.println(rect);
+        rect.setFill(Color.RED);
         System.out.println("test");
     }
     
