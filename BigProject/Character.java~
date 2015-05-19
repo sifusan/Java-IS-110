@@ -4,23 +4,23 @@ import javafx.scene.shape.Line;
 public class Character {
     private Rectangle rect;
     private final double FALL_SPEED = 9.81;
+    private final int MOVE_SPEED = 10;
     
     public Character(Rectangle rect) {
         this.rect = rect;
-        System.out.println("test");
     }
     
     public Character() {
-        this(new Rectangle(10, 10));
-        System.out.println(rect);
+        this(new Rectangle(10, 100));
         rect.setFill(Color.RED);
-        System.out.println("test");
     }
     
     public void moveRight() {
+        System.out.println("Right");
     }
     
     public void moveLeft() {
+        System.out.println("Left);
     }
     
     public void jump() {

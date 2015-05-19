@@ -33,14 +33,6 @@ public class Level {
         return title;
     }
 
-    public Label getStart() {
-        return start;
-    }
-
-    public Label getGoal() {
-        return goal;
-    }
-
     public int getWidth() {
         return WIDTH;
     }
@@ -49,7 +41,7 @@ public class Level {
         return HEIGHT;
     }
     
-    public Line getLine() {
+    public static Line getLine() {
         return line;
     }
     
