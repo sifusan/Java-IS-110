@@ -18,8 +18,9 @@ public class Game extends Application {
         setCurrentLevel(level);
         primaryStage.setTitle(level.getTitle());
         primaryStage.setScene(scene);
-        
         primaryStage.show();
+        
+        getCurrentLevel().getCharacter().getRectangle().setFocusTraversable(true);
         
         getCurrentLevel().getCharacter().getRectangle().setOnKeyPressed(
                 (e) -> {
@@ -28,6 +29,19 @@ public class Game extends Application {
             }
             else if (e.getCode() == KeyCode.LEFT) {
                 getCurrentLevel().getCharacter().moveLeft();
+            }
+            else if (e.getCode() == KeyCode.SPACE) {
+                getCurrentLevel().getCharacter().jump();
+            }
+        });
+        
+        
+        
+        //getCurrentLevel().getExitButton().setOnMouseClicked((e) -> {
+            if(e.getButton() == MouseButton.PRIMARY) {
+                primaryStage.close();
+                Main main = new Main();
+                main.start(new Stage());
             }
         });
     }

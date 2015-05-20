@@ -12,7 +12,7 @@ public class ShowArc extends Application {
     public void start(Stage primaryStage) {
         Pane pane = new Pane();
         
-        Arc arc1 = new Arc(150, 100, 80, 80, 30, 35);
+        Arc arc1 = new Arc(150, 100, 20, 80, 0, 180);
         arc1.setFill(Color.RED);
         arc1.setType(ArcType.ROUND);
         pane.getChildren().add(new Text(210, 40, "arc1: round"));

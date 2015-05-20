@@ -35,7 +35,7 @@ public class LoanCalculator extends Application {
         
         gridPane.setAlignment(Pos.CENTER);
         tfAnnualInterestRate.setAlignment(Pos.BOTTOM_RIGHT);
-        tfNumberOfYears.setAlignment(Pos. BOTTOM_RIGHT);
+        tfNumberOfYears.setAlignment(Pos.BOTTOM_RIGHT);
         tfLoanAmount.setAlignment(Pos.BOTTOM_RIGHT);
         tfMonthlyPayment.setAlignment(Pos.BOTTOM_RIGHT);
         tfTotalPayment.setAlignment(Pos.BOTTOM_RIGHT);

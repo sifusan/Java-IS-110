@@ -12,7 +12,7 @@ public class ShowArc extends Application {
     public void start(Stage primaryStage) {
         Pane pane = new Pane();
         
-        Arc arc1 = new Arc(150, 100, 80, 80, 30, 35);
+        Arc arc1 = new Arc(150, 100, 80, 80, 0, 180);
         arc1.setFill(Color.RED);
         arc1.setType(ArcType.ROUND);
         pane.getChildren().add(new Text(210, 40, "arc1: round"));
@@ -36,7 +36,7 @@ public class ShowArc extends Application {
         arc4.setFill(Color.GREEN);
         arc4.setType(ArcType.CHORD);
         arc4.setStroke(Color.BLACK);
-        pane.getChildren().add(new Insets(210, 170, "arc4: chord"));
+        pane.getChildren().add(new Text(210, 170, "arc4: chord"));
         pane.getChildren().add(arc4);
         
         Scene scene = new Scene(pane, 300, 200);

@@ -52,7 +52,7 @@ class Game {
 
 class Hero {
     private Map currentLocation;
-    private Integer health;
+    private int health;
     
     public Hero() {
     }

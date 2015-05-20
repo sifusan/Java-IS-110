@@ -7,7 +7,6 @@ import javafx.scene.paint.Color;
 import java.util.Scanner;
 import javafx.scene.layout.HBox;
 
-
 public abstract class Menu {
     private String title;
     protected BorderPane pane;
@@ -17,6 +16,7 @@ public abstract class Menu {
     public Menu(String title, BorderPane pane) {
         this.title = title;
         this.pane = pane;
+        pane.setStyle("-fx-background-color: LIGHTBLUE;");
     }
     
     public BorderPane getPane() {
@@ -35,5 +35,5 @@ public abstract class Menu {
         return HEIGHT;
     }
     
-    //public abstract Button getbtStartGame();
+    //public abstract Pane getPane();
 }

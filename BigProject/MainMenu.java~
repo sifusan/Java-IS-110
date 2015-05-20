@@ -1,20 +1,21 @@
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.text.*;
+import javafx.scene.layout.*;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
-import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 
 public class MainMenu extends Menu {
     private Button btStartGame = new Button("Start Game");
     private Button btLevels = new Button("Levels");
-    private Button btItems = new Button("Items");
+    private Button btHighScore = new Button("HighScore");
     private Button btQuit = new Button("Quit");
     private Button btHelp = new Button("Help");
     
@@ -29,13 +30,15 @@ public class MainMenu extends Menu {
         vBox.setPadding(new Insets(10, 10, 80, 10));
         vBox.getChildren().add(btStartGame);
         vBox.getChildren().add(btLevels);
-        vBox.getChildren().add(btItems);
+        vBox.getChildren().add(btHighScore);
         vBox.getChildren().add(btHelp);
         vBox.getChildren().add(btQuit);
         pane.setLeft(vBox);
         
         StackPane bigTitlePane = new StackPane();
-        bigTitlePane.getChildren().add(new Label("BRICKY"));
+        Label label = new Label("SHAPY");
+        label.setFont(Font.font("Courier", FontWeight.BOLD, 30));
+        bigTitlePane.getChildren().add(label);
         pane.setTop(bigTitlePane);
     }
     
@@ -47,8 +50,8 @@ public class MainMenu extends Menu {
         return btLevels;
     }
     
-    public Button getbtItems() {
-        return btItems;
+    public Button getbtHighScore() {
+        return btHighScore;
     }
     
     public Button getbtHelp() {
@@ -57,12 +60,5 @@ public class MainMenu extends Menu {
     
     public Button getbtQuit() {
         return btQuit;
-    }
+    }  
 }
-
-class CustomPane extends StackPane {
-    public CustomPane(String title) {
-        getChildren().add(new Label(title));
-    }
-}
-

@@ -25,14 +25,15 @@ public class Main extends Application {
             primaryStage.close();
             Game game = new Game();
             game.start(new Stage());
-            //Level level = new FirstLevel();
-            //Scene lvlScene = new Scene(
-              //  level.getPane(), level.getWidth(), level.getHeight());
-            //setCurrentLevel(level);
-            //primaryStage.setTitle(level.getTitle());
-            //primaryStage.setScene(lvlScene);
-            //primaryStage.sizeToScene();
-            
         });
+        
+        mainMenu.getbtLevels().setOnMouseClicked((e) -> {
+            LevelMenu levelMenu = new LevelMenu();
+            Scene levelMenuScene = new Scene(
+                levelMenu.getPane(), levelMenu.getWidth(),
+                levelMenu.getHeight());
+            primaryStage.setScene(levelMenuScene);
+            primaryStage.sizeToScene();
+        });        
     }
 }
