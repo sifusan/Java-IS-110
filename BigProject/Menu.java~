@@ -6,12 +6,14 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import java.util.Scanner;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 
 public abstract class Menu {
     private String title;
     protected BorderPane pane;
     private static final int WIDTH = 600;
     private static final int HEIGHT = 400;
+    privateButton btExit = new Button("Back to Main Menu");
     
     public Menu(String title, BorderPane pane) {
         this.title = title;
@@ -35,5 +37,8 @@ public abstract class Menu {
         return HEIGHT;
     }
     
+    public Button getbtExit() {
+        return btExit;
+    }
     //public abstract Pane getPane();
 }

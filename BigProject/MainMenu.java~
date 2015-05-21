@@ -51,7 +51,7 @@ public class MainMenu extends Menu {
     }
     
     public Button getbtScores() {
-        return btHighScore;
+        return btScores;
     }
     
     public Button getbtHelp() {

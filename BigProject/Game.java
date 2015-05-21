@@ -15,20 +15,23 @@ public class Game extends Application {
     @Override
     public void start(Stage primaryStage) {
         Level level = new FirstLevel();
+        setLevel(level);
+        
         Scene scene = new Scene(
             level.getPane(), level.getWidth(), level.getHeight());
-        setLevel(level);
+        
         primaryStage.setTitle(level.getTitle());
         primaryStage.setScene(scene);
         primaryStage.show();
+        
+        Player player = new Player();
         
         Rectangle rect = new Rectangle();
         rect = getLevel().getCharacter().getRectangle();
         
         rect.setFocusTraversable(true);
         
-        rect.setOnKeyPressed(
-                (e) -> {
+        rect.setOnKeyPressed((e) -> {
             switch(e.getCode()) {
                 case D:
                     getLevel().getCharacter().moveRight();
@@ -41,19 +44,17 @@ public class Game extends Application {
                     break;
                 case BACK_SPACE:
                     primaryStage.close();
-                    Main main = new Main();
-                    main.start(new Stage());
+                    //Main main = new Main();
+                    //main.start(new Stage());
                     break;
+                case ESCAPE:
+                    primaryStage.close();
             }
         });
         
-        //getLevel().getExitButton().setOnMouseClicked((e) -> {
-          //  if(e.getButton() == MouseButton.PRIMARY) {
-            //    primaryStage.close();
-              //  Main main = new Main();
-                //main.start(new Stage());
-           // }
-        //});
+        player.getOkName().setOnMouseClicked((e) -> {
+            System.out.println(player.getEnterName().getText());
+        });
     }
     
     public void setLevel(Level level) {

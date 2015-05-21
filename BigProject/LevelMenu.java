@@ -17,16 +17,13 @@ import javafx.scene.Scene;
 
 public class LevelMenu extends Menu {
     
-    private Button btExit = new Button("Back to Main Menu");
+    
     
     public LevelMenu() {
         super("Level Menu", new BorderPane());
         VBox vBox = new VBox(20);
-        vBox.getChildren().add(btExit);
+        vBox.getChildren().add(getbtExit());
         pane.setBottom(vBox);
     }
     
-    public Button getbtExit() {
-        return btExit;
-    }
 }

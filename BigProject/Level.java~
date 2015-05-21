@@ -26,6 +26,9 @@ public class Level {
         this.line = line;
         this.character = character;
         this.exitButton = exitButton;
+        VBox vBox = new VBox(20);
+        vBox.getChildren().add(btExit);
+        pane.setBottom(vBox);
         
         StackPane sPane = new StackPane();
         HBox hBox = new HBox(5);
@@ -40,8 +43,8 @@ public class Level {
         this("Level", new Pane(), new Line(), new Character(),
             new Button());
         
-        while(character.getRectangle().getX() > getWidth()) {
-        }
+        //while(character.getRectangle().getX() > getWidth()) {
+        //}
     }
     
     public Pane getPane() {

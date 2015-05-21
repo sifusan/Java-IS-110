@@ -1,22 +1,50 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Collections;
-
+import javafx.stage.Stage;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.control.Button;
 public class Player {
     private String name;
     private int highScore;
     private ArrayList<Integer> scoreList;
+    private Button okName;
+    private TextField enterName;
+    private Stage playerStage;
     
-    public Player(String name) {
-        this.name = name;
-        highscore = 0;
+    public Player() {
+        playerStage = new Stage();
+        StackPane stackPane = new StackPane();
+        Label promptName = new Label("Enter your name");
+        enterName = new TextField();
+        okName = new Button("OK");
+        VBox vBox = new VBox();
+        vBox.setAlignment(Pos.CENTER);
+        vBox.getChildren().add(promptName);
+        vBox.getChildren().add(enterName);
+        vBox.getChildren().add(okName);
+        stackPane.getChildren().add(vBox);
+        
+        Scene playerScene = new Scene(
+            stackPane, 300, 150);
+        playerStage.setScene(playerScene);
+        playerStage.setTitle("Name entry");
+        playerStage.show();
+        highScore = 0;
         scoreList = new ArrayList<Integer>();
-        //addNewPlayerScore(100);
-        //addNewPlayerScore(90);
     }
     
     public String getName() {
         return name;
+    }
+    
+    public void setName() {
+        this.mame;
     }
     
     public int getHighScore() {
@@ -38,6 +66,12 @@ public class Player {
                 scoreList.remove(i);
             }
         }
+    }
+    public Button getOkName() {
+        return okName;
+    }
+    public TextField getEnterName() {
+        return enterName;
     }
 }
     

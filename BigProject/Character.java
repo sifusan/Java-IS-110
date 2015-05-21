@@ -10,6 +10,7 @@ public class Character {
     private Rectangle rect;
     private final double FALL_SPEED = 9.81;
     private final int MOVE_SPEED = 10;
+    private int points = 0;
     
     public Character(Rectangle rect) {
         this.rect = rect;
@@ -22,10 +23,16 @@ public class Character {
     
     public void moveRight() {
         rect.setX(rect.getX() + 3);
+        setPoints(getPoints() + 1);
+        System.out.println(getPoints());
     }
     
     public void moveLeft() {
         rect.setX(rect.getX() - 3);
+        if (getPoints() > 0) {
+            setPoints(getPoints() - 1);
+            System.out.println(getPoints());
+        }
     }
     
     public void jump() {
@@ -52,5 +59,13 @@ public class Character {
     
     public Rectangle getRectangle() {
         return rect;
+    }
+    
+    private int getPoints() {
+        return points;
+    }
+    
+    private void setPoints(int points) {
+        this.points = points;
     }
 }
