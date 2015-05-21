@@ -42,18 +42,17 @@ public class Game extends Application {
                 case SPACE:
                     getLevel().getCharacter().jump();
                     break;
-                case BACK_SPACE:
-                    primaryStage.close();
-                    //Main main = new Main();
-                    //main.start(new Stage());
-                    break;
                 case ESCAPE:
                     primaryStage.close();
+                    
+                    break;
             }
         });
         
         player.getOkName().setOnMouseClicked((e) -> {
             System.out.println(player.getEnterName().getText());
+            player.setName(player.getEnterName().getText());
+            player.getPlayerStage().close();
         });
     }
     

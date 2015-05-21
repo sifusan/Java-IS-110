@@ -11,7 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.control.Button;
 public class Player {
     private String name;
-    private int highScore;
+    private int highScore =  0;
     private ArrayList<Integer> scoreList;
     private Button okName;
     private TextField enterName;
@@ -29,13 +29,13 @@ public class Player {
         vBox.getChildren().add(enterName);
         vBox.getChildren().add(okName);
         stackPane.getChildren().add(vBox);
-        
+        Main.getScoreMenu().getPane().getChildren().add(stackPane);
         Scene playerScene = new Scene(
             stackPane, 300, 150);
         playerStage.setScene(playerScene);
         playerStage.setTitle("Name entry");
         playerStage.show();
-        highScore = 0;
+        
         scoreList = new ArrayList<Integer>();
     }
     
@@ -43,8 +43,8 @@ public class Player {
         return name;
     }
     
-    public void setName() {
-        this.mame;
+    public void setName(String name) {
+        this.name = name;
     }
     
     public int getHighScore() {
@@ -72,6 +72,10 @@ public class Player {
     }
     public TextField getEnterName() {
         return enterName;
+    }
+    
+    public Stage getPlayerStage() {
+        return playerStage;
     }
 }
     

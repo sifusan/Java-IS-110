@@ -11,12 +11,17 @@ import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
 
 public class Main extends Application {
+    private MainMenu mainMenu;
+    private LevelMenu levelMenu;
+    private ScoreMenu scoreMenu;
+    private HelpMenu helpMenu;
+    
     @Override
     public void start(Stage primaryStage) {
-        MainMenu mainMenu = new MainMenu();
-        LevelMenu levelMenu = new LevelMenu();
-        ScoreMenu scoreMenu = new ScoreMenu();
-        HelpMenu helpMenu = new HelpMenu();
+        mainMenu = new MainMenu();
+        levelMenu = new LevelMenu();
+        scoreMenu = new ScoreMenu();
+        helpMenu = new HelpMenu();
         
         Scene mainMenuScene = new Scene(
             mainMenu.getPane(), mainMenu.getWidth(), mainMenu.getHeight());
@@ -34,7 +39,6 @@ public class Main extends Application {
         primaryStage.show();
         
         mainMenu.getbtStartGame().setOnMouseClicked((e) -> {
-            //primaryStage.close();
             Game game = new Game();
             game.start(new Stage());
         });
@@ -76,9 +80,5 @@ public class Main extends Application {
             primaryStage.setScene(mainMenuScene);
             primaryStage.setTitle(mainMenu.getTitle());
         });             
-    }
-    
-    public static void main(String[] args) {
-        Application.launch(args);
     }
 }

@@ -16,6 +16,7 @@ public class Game extends Application {
     public void start(Stage primaryStage) {
         Level level = new FirstLevel();
         setLevel(level);
+        
         Scene scene = new Scene(
             level.getPane(), level.getWidth(), level.getHeight());
         
@@ -41,26 +42,17 @@ public class Game extends Application {
                 case SPACE:
                     getLevel().getCharacter().jump();
                     break;
-                case BACK_SPACE:
-                    primaryStage.close();
-                    //Main main = new Main();
-                    //main.start(new Stage());
-                    break;
                 case ESCAPE:
                     primaryStage.close();
+                    
+                    break;
             }
         });
         
         player.getOkName().setOnMouseClicked((e) -> {
             System.out.println(player.getEnterName().getText());
+            player.setName(player.getEnterName().getText());
+            player.getPlayerStage().close();
         });
-    }
-    
-    public void setLevel(Level level) {
-        this.level = level;
-    }
-    
-    public Level getLevel() {
-        return level;
     }
 }

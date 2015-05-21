@@ -31,9 +31,6 @@ public class FirstLevel extends Level {
         character.getRectangle().setX(line.getStartX() + 30);
         character.getRectangle().setY(line.getStartY() - 100);
         pane.getChildren().add(character.getRectangle());
-        
-        //add listener to x and y of obstacle and reset the character if they
-        // meet
     }
 }   
     

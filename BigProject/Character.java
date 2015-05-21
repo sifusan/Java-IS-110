@@ -8,8 +8,6 @@ import javafx.util.Duration;
 
 public class Character {
     private Rectangle rect;
-    private final double FALL_SPEED = 9.81;
-    private final int MOVE_SPEED = 10;
     private int points = 0;
     
     public Character(Rectangle rect) {
@@ -51,10 +49,6 @@ public class Character {
         jump.play();
         
         rect.setX(path.getCenterX() + path.getRadiusX() + 15);
-    }
-    
-    public double getFallSpeed() {
-        return FALL_SPEED;
     }
     
     public Rectangle getRectangle() {

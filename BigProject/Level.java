@@ -29,8 +29,6 @@ public class Level {
         
         StackPane sPane = new StackPane();
         HBox hBox = new HBox(5);
-        //hBox.setLayoutY(getHeight() - 25);
-        //hBox.getChildren().add(exitButton);
         sPane.getChildren().add(hBox);
         pane.getChildren().add(sPane);
         pane.setStyle("-fx-background-color: LIGHTBLUE;");
@@ -39,9 +37,6 @@ public class Level {
     public Level() {
         this("Level", new Pane(), new Line(), new Character(),
             new Button());
-        
-        //while(character.getRectangle().getX() > getWidth()) {
-        //}
     }
     
     public Pane getPane() {
