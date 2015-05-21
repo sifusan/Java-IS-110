@@ -12,6 +12,9 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.GridPane;
+import javafx.application.Application;
+import javafx.scene.Scene;
+
 public class LevelMenu extends Menu {
     
     private Button btExit = new Button("Back to Main Menu");
@@ -24,5 +27,6 @@ public class LevelMenu extends Menu {
     }
     
     public Button getbtExit() {
-        return btExit
+        return btExit;
+    }
 }

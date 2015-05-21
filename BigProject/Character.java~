@@ -6,10 +6,11 @@ import javafx.animation.Timeline;
 import javafx.scene.shape.Arc;
 import javafx.util.Duration;
 
-public class Character implements Movable {
+public class Character {
     private Rectangle rect;
     private final double FALL_SPEED = 9.81;
     private final int MOVE_SPEED = 10;
+    private int points;
     
     public Character(Rectangle rect) {
         this.rect = rect;
@@ -22,12 +23,10 @@ public class Character implements Movable {
     
     public void moveRight() {
         rect.setX(rect.getX() + 3);
-        System.out.println("right");
     }
     
     public void moveLeft() {
         rect.setX(rect.getX() - 3);
-        System.out.println("left");
     }
     
     public void jump() {
@@ -42,13 +41,10 @@ public class Character implements Movable {
          
         jump.setPath(path);
         jump.setNode(rect);
-        //jump.setAutoReverse(false);
         jump.setDuration(Duration.millis(1500));
-        //jump.setCycleCount(1);
         jump.play();
         
         rect.setX(path.getCenterX() + path.getRadiusX() + 15);
-        System.out.println("jump");
     }
     
     public double getFallSpeed() {
@@ -58,4 +54,7 @@ public class Character implements Movable {
     public Rectangle getRectangle() {
         return rect;
     }
+    
+    public void setPoints;
+        
 }

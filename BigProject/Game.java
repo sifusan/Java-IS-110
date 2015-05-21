@@ -6,10 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.control.Button;
+import javafx.scene.shape.Rectangle;
 
 public class Game extends Application {
     private boolean done;
     private Level level;
+
     @Override
     public void start(Stage primaryStage) {
         Level level = new FirstLevel();
@@ -20,28 +22,38 @@ public class Game extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         
-        getLevel().getCharacter().getRectangle().setFocusTraversable(true);
+        Rectangle rect = new Rectangle();
+        rect = getLevel().getCharacter().getRectangle();
         
-        getLevel().getCharacter().getRectangle().setOnKeyPressed(
+        rect.setFocusTraversable(true);
+        
+        rect.setOnKeyPressed(
                 (e) -> {
-            if (e.getCode() == KeyCode.D) {
-                getLevel().getCharacter().moveRight();
-            }
-            else if (e.getCode() == KeyCode.A) {
-                getLevel().getCharacter().moveLeft();
-            }
-            else if (e.getCode() == KeyCode.SPACE) {
-                getLevel().getCharacter().jump();
+            switch(e.getCode()) {
+                case D:
+                    getLevel().getCharacter().moveRight();
+                    break;
+                case A:
+                    getLevel().getCharacter().moveLeft();
+                    break;
+                case SPACE:
+                    getLevel().getCharacter().jump();
+                    break;
+                case BACK_SPACE:
+                    primaryStage.close();
+                    Main main = new Main();
+                    main.start(new Stage());
+                    break;
             }
         });
         
-        getLevel().getExitButton().setOnMouseClicked((e) -> {
-            if(e.getButton() == MouseButton.PRIMARY) {
-                primaryStage.close();
-                Main main = new Main();
-                main.start(new Stage());
-            }
-        });
+        //getLevel().getExitButton().setOnMouseClicked((e) -> {
+          //  if(e.getButton() == MouseButton.PRIMARY) {
+            //    primaryStage.close();
+              //  Main main = new Main();
+                //main.start(new Stage());
+           // }
+        //});
     }
     
     public void setLevel(Level level) {

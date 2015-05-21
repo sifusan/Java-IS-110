@@ -7,6 +7,7 @@ import javafx.scene.paint.Color;
 import java.util.Scanner;
 import javafx.scene.layout.HBox;
 import java.util.HashMap;
+import javafx.scene.control.Label;
 
 public class ScoreMenu extends Menu {
     private HashMap<Player, Integer> scoreMap;
@@ -14,6 +15,8 @@ public class ScoreMenu extends Menu {
     public ScoreMenu() {
         super("Scores", new BorderPane());
         scoreMap = new HashMap<Player, Integer>();
-        
-    }     
+        for (int i = 0; i > 5; i++) {
+            Player player = new Player("Player" + i);
+        }            
+    }
 }

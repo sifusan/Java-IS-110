@@ -15,7 +15,7 @@ import javafx.scene.paint.Color;
 public class MainMenu extends Menu {
     private Button btStartGame = new Button("Start Game");
     private Button btLevels = new Button("Levels");
-    private Button btHighScore = new Button("HighScore");
+    private Button btScores = new Button("HighScore");
     private Button btQuit = new Button("Quit");
     private Button btHelp = new Button("Help");
     
@@ -30,7 +30,7 @@ public class MainMenu extends Menu {
         vBox.setPadding(new Insets(10, 10, 80, 10));
         vBox.getChildren().add(btStartGame);
         vBox.getChildren().add(btLevels);
-        vBox.getChildren().add(btHighScore);
+        vBox.getChildren().add(btScores);
         vBox.getChildren().add(btHelp);
         vBox.getChildren().add(btQuit);
         pane.setLeft(vBox);
@@ -50,8 +50,8 @@ public class MainMenu extends Menu {
         return btLevels;
     }
     
-    public Button getbtHighScore() {
-        return btHighScore;
+    public Button getbtScores() {
+        return btScores;
     }
     
     public Button getbtHelp() {

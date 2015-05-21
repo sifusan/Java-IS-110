@@ -6,19 +6,27 @@ import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
-    private LevelMenu levelMenu = new LevelMenu()
     
     @Override
     public void start(Stage primaryStage) {
         MainMenu mainMenu = new MainMenu();
+        LevelMenu levelMenu = new LevelMenu();
+        ScoreMenu scoreMenu = new ScoreMenu();
         
-        Scene scene = new Scene(
+        Scene mainMenuScene = new Scene(
             mainMenu.getPane(), mainMenu.getWidth(), mainMenu.getHeight());
+        Scene levelMenuScene = new Scene(
+            levelMenu.getPane(), levelMenu.getWidth(), levelMenu.getHeight());
+        Scene scoreMenuScene = new Scene(
+            scoreMenu.getPane(), scoreMenu.getWidth(), scoreMenu.getHeight());
+        
+        
             
         primaryStage.setTitle(mainMenu.getTitle());
-        primaryStage.setScene(scene);
+        primaryStage.setScene(mainMenuScene);
         primaryStage.setResizable(false);
         primaryStage.sizeToScene();
         primaryStage.show();
@@ -30,13 +38,19 @@ public class Main extends Application {
         });
         
         mainMenu.getbtLevels().setOnMouseClicked((e) -> {
-            Scene levelMenuScene = new Scene(
-                levelMenu.getPane(), levelMenu.getWidth(),
-                levelMenu.getHeight());
-            primaryStage.close();
             primaryStage.setScene(levelMenuScene);
+            primaryStage.setTitle(levelMenu.getTitle());
             primaryStage.sizeToScene();
-            primaryStage.show();
-        });     
+        });
+        
+        mainMenu.getbtScores().setOnMouseClicked((e) -> {
+            primaryStage.setScene(scoreMenuScene);
+        })
+        
+        levelMenu.getbtExit().setOnMouseClicked((e) -> {
+            primaryStage.setScene(mainMenuScene);
+            primaryStage.setTitle(mainMenu.getTitle());
+            
+        });         
     }
 }

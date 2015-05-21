@@ -22,12 +22,10 @@ public class Character {
     
     public void moveRight() {
         rect.setX(rect.getX() + 3);
-        System.out.println("right");
     }
     
     public void moveLeft() {
         rect.setX(rect.getX() - 3);
-        System.out.println("left");
     }
     
     public void jump() {
@@ -42,13 +40,10 @@ public class Character {
          
         jump.setPath(path);
         jump.setNode(rect);
-        //jump.setAutoReverse(false);
         jump.setDuration(Duration.millis(1500));
-        //jump.setCycleCount(1);
         jump.play();
         
         rect.setX(path.getCenterX() + path.getRadiusX() + 15);
-        System.out.println("jump");
     }
     
     public double getFallSpeed() {

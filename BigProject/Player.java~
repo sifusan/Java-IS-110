@@ -7,11 +7,12 @@ public class Player {
     private int highScore;
     private ArrayList<Integer> scoreList;
     
-    public Player(String name, int highScore) {
+    public Player(String name) {
         this.name = name;
-        this.highScore = highScore;
+        highscore = 0;
         scoreList = new ArrayList<Integer>();
-        addNewPlayerScore(100);
+        //addNewPlayerScore(100);
+        //addNewPlayerScore(90);
     }
     
     public String getName() {
@@ -26,13 +27,17 @@ public class Player {
         this.highScore = score;
     }
     
-    public void addNewPlayerScore(int score) {
+    public void newScore(int score) {
         scoreList.add(score);
         Collections.sort(scoreList);
         if (score > getHighScore()) {
             setHighScore(score);
         }
-        
+        if (scoreList.size() > 10) {
+            for (int i = scoreList.size() - 1; i > 10; --i) {
+                scoreList.remove(i);
+            }
+        }
     }
 }
     

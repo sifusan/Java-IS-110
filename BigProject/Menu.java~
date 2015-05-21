@@ -17,9 +17,6 @@ public abstract class Menu {
         this.title = title;
         this.pane = pane;
         pane.setStyle("-fx-background-color: LIGHTBLUE;");
-        HBox hBox = new HBox(5);
-        hBox.getChildren().add(exitButton);
-        pane.getChildren().add(hBox);
     }
     
     public BorderPane getPane() {
