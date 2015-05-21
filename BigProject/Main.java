@@ -8,6 +8,8 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.control.Button;
 
 public class Main extends Application {
+    private LevelMenu levelMenu = new LevelMenu();
+    
     @Override
     public void start(Stage primaryStage) {
         MainMenu mainMenu = new MainMenu();
@@ -27,13 +29,14 @@ public class Main extends Application {
             game.start(new Stage());
         });
         
-        //mainMenu.getbtLevels().setOnMouseClicked((e) -> {
-            //LevelMenu levelMenu = new LevelMenu();
-            //Scene levelMenuScene = new Scene(
-              //  levelMenu.getPane(), levelMenu.getWidth(),
-                //levelMenu.getHeight());
-            //primaryStage.setScene(levelMenuScene);
-            //primaryStage.sizeToScene();
-        //});        
+        mainMenu.getbtLevels().setOnMouseClicked((e) -> {
+            Scene levelMenuScene = new Scene(
+                levelMenu.getPane(), levelMenu.getWidth(),
+                levelMenu.getHeight());
+            primaryStage.close();
+            primaryStage.setScene(levelMenuScene);
+            primaryStage.sizeToScene();
+            primaryStage.show();
+        });     
     }
 }

@@ -15,29 +15,27 @@ public class Game extends Application {
         Level level = new FirstLevel();
         Scene scene = new Scene(
             level.getPane(), level.getWidth(), level.getHeight());
-        setCurrentLevel(level);
+        setLevel(level);
         primaryStage.setTitle(level.getTitle());
         primaryStage.setScene(scene);
         primaryStage.show();
         
-        getCurrentLevel().getCharacter().getRectangle().setFocusTraversable(true);
+        getLevel().getCharacter().getRectangle().setFocusTraversable(true);
         
-        getCurrentLevel().getCharacter().getRectangle().setOnKeyPressed(
+        getLevel().getCharacter().getRectangle().setOnKeyPressed(
                 (e) -> {
-            if (e.getCode() == KeyCode.RIGHT) {
-                getCurrentLevel().getCharacter().moveRight();
+            if (e.getCode() == KeyCode.D) {
+                getLevel().getCharacter().moveRight();
             }
-            else if (e.getCode() == KeyCode.LEFT) {
-                getCurrentLevel().getCharacter().moveLeft();
+            else if (e.getCode() == KeyCode.A) {
+                getLevel().getCharacter().moveLeft();
             }
             else if (e.getCode() == KeyCode.SPACE) {
-                getCurrentLevel().getCharacter().jump();
+                getLevel().getCharacter().jump();
             }
         });
         
-        
-        
-        getCurrentLevel().getExitButton().setOnMouseClicked((e) -> {
+        getLevel().getExitButton().setOnMouseClicked((e) -> {
             if(e.getButton() == MouseButton.PRIMARY) {
                 primaryStage.close();
                 Main main = new Main();
@@ -46,11 +44,11 @@ public class Game extends Application {
         });
     }
     
-    public void setCurrentLevel(Level level) {
+    public void setLevel(Level level) {
         this.level = level;
     }
     
-    public Level getCurrentLevel() {
+    public Level getLevel() {
         return level;
     }
 }

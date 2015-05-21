@@ -32,7 +32,10 @@ public class FirstLevel extends Level {
         character.getRectangle().setY(line.getStartY() - 100);
         pane.getChildren().add(character.getRectangle());
         
-        pane.getChildren().add(exitButton);
+        
+        //HBox hBox = new HBox(5);
+        //hBox.getChildren().add(exitButton);
+        //pane.getChildren().add(hBox);
         
         //add listener to x and y of obstacle and reset the character if they
         // meet

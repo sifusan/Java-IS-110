@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.shape.Line;
 import javafx.scene.control.Button;
+import javafx.scene.layout.HBox;
 
 public class Level {
     private String title;
@@ -23,6 +24,11 @@ public class Level {
         this.line = line;
         this.character = character;
         this.exitButton = exitButton;
+        
+        HBox hBox = new HBox(5);
+        hBox.setLayoutY(getHeight() - 25);
+        hBox.getChildren().add(exitButton);
+        pane.getChildren().add(hBox);
         pane.setStyle("-fx-background-color: LIGHTBLUE;");
     }
     
