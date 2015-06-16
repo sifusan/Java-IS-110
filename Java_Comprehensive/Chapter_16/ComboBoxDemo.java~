@@ -1,0 +1,58 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+
+public class ComboBoxDemo extends Application {
+    private String[] flagTitles = {"Canada", "USA"};
+    
+    private ImageView[] flagImage = {
+        new ImageView("~/java/Java-IS-110/Java_Comprehensive/Chapter_16/flagbig.jpg"),
+        new ImageView("~/java/Java-IS-110/Java_Comprehensive/Chapter_16/us.jpg")};
+    
+    private String[] flagDescription = new String[2];
+    
+    private DescriptionPane descriptionPane = new DescriptionPane();
+    
+    private ComboBox<String> cbo = new ComboBox<>();
+    
+    @Override
+    public void start(Stage primaryStage) {
+        flagDescription[0] = "The Canadian Flag";
+        flagDescription[1] = "The American Flag";
+        
+        setDisplay(0);
+        
+        BorderPane pane = new BorderPane();
+        
+        BorderPane paneForComboBox = new BorderPane();
+        paneForComboBox.setLeft(new Label("Select a country: "));
+        paneForComboBox.setCenter(cbo);
+        pane.setTop(paneForComboBox);
+        cbo.setPrefWidth(400);
+        cbo.setValue("Canada");
+        
+        ObservableList<String> items = 
+            FXCollections.observableArrayList(flagTitles);
+        cbo.getItems().addAll(items);
+        pane.setCenter(descriptionPane);
+        
+        cbo.setOnAction(e -> setDisplay(items.indexOf(cbo.getValue())));
+        
+        Scene scene = new Scene(pane, 450, 170);
+        primaryStage.setTitle("ComboBoxDemo");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+    
+    public void setDisplay(int index) {
+        descriptionPane.setTitle(flagTitles[index]);
+        descriptionPane.setImageView(flagImage[index]);
+        descriptionPane.setDescription(flagDescription[index]);
+    }
+}
